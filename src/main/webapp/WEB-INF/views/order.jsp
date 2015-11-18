@@ -40,44 +40,50 @@
 <!-- custom body begin -->
 <div class="container main">
 	<c:if test="${tip!=null}"><div class="alert alert-success" role="alert">注册成功</div></c:if>
-        <div class="col-md-6 col-md-offset-3">
-            <h2 class="text-center">用户注册</h2>
-
-            <form  action="register" method="post">
-                <div class="form-group ">
-                   <label for="rt1-first-name">快递公司*</label>
-                  	 <select>
-                  	 	<c:forEach items="${companty }" var="bean">
-                  	 		<option value="${bean.id }">${bean.name }</option>
-                  	 	</c:forEach>
-                  	 </select>
-                </div>
-                <div class="form-group">
-                    <label for="rt1-first-name">寄送地*</label>
-                  	 <select>
-                  	 	<c:forEach items="${areas }" var="bean">
-                  	 		<option value="${bean.id }">${bean.name}</option>
-                  	 	</c:forEach>
-                  	 </select>
-                </div>
-                <div class="form-group">
-                     <label for="rt1-first-name">目的地*</label>
-                  	 <select>
-                  	 	<c:forEach items="${areas }" var="bean">
-                  	 		<option value="${bean.id }">${bean.name }</option>
-                  	 	</c:forEach>
-                  	 </select>
-                </div>
-                <div class="form-group">
-                       <label for="rt1-email">重量*</label><input type="text"  name='user.email'>
-                </div>
-                <div class="form-group">
-                   <label for="rt1-city">联系电话*</label><input type="text"  name='user.address'>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary ">提交</button>
-                </div>
-            </form>
+	<div class='row'>
+	
+        <div class="col-md-12 col-md-offset-3">
+        
+						<div class="panel panel-default">
+						 <div class="panel-heading">快递预约</div>
+						 <div class="panel-body">
+						<form role="form">
+						   <div class="form-group">
+							  <label for="rt1-first-name">快递公司*</label>
+							  	<select class='form-control'>
+			                  	 	<c:forEach items="${companty }" var="bean">
+			                  	 		<option value="${bean.id }">${bean.name }</option>
+			                  	 	</c:forEach>
+			                  	 </select>
+						   </div>
+						   <div class="form-group">
+							  <label for="rt1-first-name">寄送地*</label>
+			                  	 <select class='form-control'>
+			                  	 	<c:forEach items="${areas }" var="bean">
+			                  	 		<option value="${bean.id }">${bean.name}</option>
+			                  	 	</c:forEach>
+			                  	 </select>
+						   </div>
+						   <div class="form-group">
+							   <label for="rt1-first-name">目的地*</label>
+			                  	 <select class='form-control'>
+			                  	 	<c:forEach items="${areas }" var="bean">
+			                  	 		<option value="${bean.id }">${bean.name }</option>
+			                  	 	</c:forEach>
+			                  	 </select>
+						   </div>
+						   <div class="form-group">
+							     <label >重量*</label><input type="text"  name='user.email' class='form-control'>
+						   </div>
+						    <div class="form-group">
+							      <label >联系电话*</label><input type="text"  name='user.address' class='form-control'>
+						   </div>
+						   
+						   <button type="submit" class="btn btn-sm btn-default">下单</button>
+						</form>
+						 </div>
+				</div>
+        </div>
         </div>
     </div>
     <%@include file="./foot.jsp" %>
